@@ -1,0 +1,14 @@
+### mvn ###
+.mvn
+mvnw
+mvnw.cmd
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+target/
+
+### VS Code ###
+.vscode/
