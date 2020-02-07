@@ -13,56 +13,55 @@ import java.util.Stack;
  */
 public class MinStack155 {
 
-	public static void main(String[] args) {
-
-	}
+    public static void main(String[] args) {
+    }
 
 }
 
 class MinStack {
 
-	/**
-	 * 存放数据
-	 */
-	private Stack<Integer> dataStack;
-	/**
-	 * 存放最小值
-	 */
-	private Stack<Integer> minStack;
+    /**
+     * 存放数据
+     */
+    private Stack<Integer> dataStack;
+    /**
+     * 存放最小值
+     */
+    private Stack<Integer> minStack;
 
-	/**
-	 * initialize your data structure here.
-	 */
-	public MinStack() {
-		dataStack = new Stack<Integer>();
-		minStack = new Stack<Integer>();
-	}
+    /**
+     * initialize your data structure here.
+     */
+    public MinStack() {
+        dataStack = new Stack<Integer>();
+        minStack = new Stack<Integer>();
+    }
 
-	public void push(int x) {
-		dataStack.push(x);
-		// 每次入栈需要比较，每次存放数据栈中元素最小值
-		if (minStack.isEmpty()) {
-			minStack.push(x);
-		} else {
-			// 如果新数据大于当前最小值
-			if (minStack.peek() <= x) {
-				x = minStack.peek();
-			}
-			minStack.push(x);
-		}
-	}
+    public void push(int x) {
+        dataStack.push(x);
+        // 每次入栈需要比较，每次存放数据栈中元素最小值
+        if (minStack.isEmpty()) {
+            minStack.push(x);
+        } else {
+            // 如果新数据大于当前最小值
+            if (minStack.peek() <= x) {
+                x = minStack.peek();
+            }
+            minStack.push(x);
+        }
+    }
 
-	public void pop() {
-		// 数据栈和最小值栈同时弹出
-		dataStack.pop();
-		minStack.pop();
-	}
+    public void pop() {
+        // 数据栈和最小值栈同时弹出
+        dataStack.pop();
+        minStack.pop();
+    }
 
-	public int top() {
-		return dataStack.peek();
-	}
+    public int top() {
+        return dataStack.peek();
+    }
 
-	public int getMin() {
-		return minStack.peek();
-	}
+    public int getMin() {
+        return minStack.peek();
+    }
 }
