@@ -1,4 +1,4 @@
-package site.muzhi.solve;
+package site.muzhi.array;
 
 /**
  * Author: lichuang

@@ -1,4 +1,4 @@
-package site.muzhi.solve;
+package site.muzhi.map;
 
 import java.util.ArrayList;
 import java.util.HashMap;

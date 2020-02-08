@@ -1,11 +1,11 @@
-package site.muzhi.solve;
+package site.muzhi.array;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
  * Author: lichuang
- * Date: Create in 20:46 2019/9/23
+ * Date: 20:46 2019/9/23
  * Description:
  * 给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾
  * 同时保持非零元素的相对顺序。
