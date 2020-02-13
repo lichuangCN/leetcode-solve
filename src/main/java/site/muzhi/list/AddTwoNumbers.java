@@ -27,7 +27,7 @@ package site.muzhi.list;
  */
 public class AddTwoNumbers {
 
-    static class ListNode {
+    class ListNode {
         int val;
         ListNode next;
 
@@ -38,23 +38,9 @@ public class AddTwoNumbers {
 
     public static void main(String[] args) {
 
-        // l1
-        ListNode l11 = new ListNode(1);
-        // l2
-        ListNode l21 = new ListNode(9);
-        ListNode l22 = new ListNode(9);
-        l21.next = l22;
-
-        ListNode node = addTwoNumbers(l11, l21);
-
-        while (node != null) {
-            System.out.print(node.val);
-            node = node.next;
-        }
-
     }
 
-    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
         ListNode header = new ListNode(0);
         ListNode cursor = header;
@@ -85,8 +71,8 @@ public class AddTwoNumbers {
                 node = new ListNode(c1.val);
             } else {
                 // 有进位
-                node = new ListNode((c1.val + 1)%10);
-                temp = (c1.val + 1)/10;
+                node = new ListNode((c1.val + 1) % 10);
+                temp = (c1.val + 1) / 10;
             }
             cursor.next = node;
             cursor = node;
@@ -101,8 +87,8 @@ public class AddTwoNumbers {
                 node = new ListNode(c2.val);
             } else {
                 // 有进位
-                node = new ListNode((c2.val + 1)%10);
-                temp = (c2.val + 1)/10;
+                node = new ListNode((c2.val + 1) % 10);
+                temp = (c2.val + 1) / 10;
             }
             cursor.next = node;
             cursor = node;

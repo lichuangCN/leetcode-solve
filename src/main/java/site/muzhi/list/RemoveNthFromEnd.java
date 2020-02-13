@@ -30,7 +30,7 @@ package site.muzhi.list;
  */
 public class RemoveNthFromEnd {
 
-    static class ListNode {
+    class ListNode {
         int val;
         ListNode next;
 
@@ -41,26 +41,9 @@ public class RemoveNthFromEnd {
 
     public static void main(String[] args) {
 
-        ListNode head = new ListNode(0);
-        ListNode l1 = new ListNode(1);
-        ListNode l2 = new ListNode(2);
-        ListNode l3 = new ListNode(3);
-        ListNode l4 = new ListNode(4);
-        head.next = l1;
-        l1.next = l2;
-        l2.next = l3;
-        l3.next = l4;
-        ListNode list = removeNthFromEnd(head, 5);
-
-        while (list != null) {
-            System.out.println(list.val);
-            list = list.next;
-        }
-
-
     }
 
-    public static ListNode removeNthFromEnd(ListNode head, int n) {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
         if (head == null) {
             return head;
         }

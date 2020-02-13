@@ -13,7 +13,7 @@ package site.muzhi.list;
 
 public class MergeTwoSortedLists {
 
-    static class ListNode {
+    class ListNode {
         int val;
         ListNode next;
 
@@ -24,27 +24,9 @@ public class MergeTwoSortedLists {
 
     public static void main(String[] args) {
 
-        // l1
-        ListNode l11 = new ListNode(1);
-        ListNode l12 = new ListNode(2);
-        ListNode l13 = new ListNode(3);
-        ListNode l14 = new ListNode(4);
-        l11.next = l12;
-        l12.next = l13;
-        l13.next = l14;
-        // l2
-        ListNode l21 = new ListNode(5);
-        ListNode l22 = new ListNode(6);
-        l21.next = l22;
-
-        ListNode listNode = mergeTwoLists(l11, l21);
-        while (listNode != null) {
-            System.out.println(listNode.val);
-            listNode = listNode.next;
-        }
     }
 
-    public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 
         // 非空判断
         if (l1 == null) {
