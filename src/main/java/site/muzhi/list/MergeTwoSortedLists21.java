@@ -11,7 +11,7 @@ package site.muzhi.list;
  * 输出：1->1->2->3->4->4
  */
 
-public class MergeTwoSortedLists {
+public class MergeTwoSortedLists21 {
 
     class ListNode {
         int val;
@@ -26,7 +26,13 @@ public class MergeTwoSortedLists {
 
     }
 
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    /**
+     * 创建新的节点
+     * @param l1
+     * @param l2
+     * @return
+     */
+    public ListNode mergeTwoLists1(ListNode l1, ListNode l2) {
 
         // 非空判断
         if (l1 == null) {
@@ -71,6 +77,34 @@ public class MergeTwoSortedLists {
             // 指针右移
             l2 = l2.next;
             cursor = cursor.next;
+        }
+        return head.next;
+    }
+
+    /**
+     * 使用原有节点
+     * @param l1
+     * @param l2
+     * @return
+     */
+    public ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
+        ListNode head = new ListNode(0);
+        ListNode temp = head;
+        while (l1!=null && l2!=null) {
+            if (l1.val<=l2.val) {
+                temp.next = l1;
+                l1 = l1.next;
+            } else {
+                temp.next = l2;
+                l2 = l2.next;
+            }
+            temp = temp.next;
+        }
+        if (l1!=null) {
+            temp.next = l1;
+        }
+        if (l2!=null) {
+            temp.next = l2;
         }
         return head.next;
     }
