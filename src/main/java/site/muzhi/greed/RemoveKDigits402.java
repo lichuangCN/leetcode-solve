@@ -6,8 +6,11 @@ import java.util.LinkedList;
  * @author: LiChuang
  * @date: 2020/02/22
  * @description:
+ * 给定一个以字符串表示的非负整数 num，移除这个数中的 k 位数字，使得剩下的数字最小
+ *
+ * 算法思想：采用栈的数据结构，保存可能小的字符
  */
-public class RemoveKDigits {
+public class RemoveKDigits402 {
 
     public String removeKDigits(String num, int k) {
         LinkedList<Character> stack = new LinkedList<>();
