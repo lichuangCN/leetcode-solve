@@ -1,5 +1,6 @@
 package site.muzhi.array;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,7 +11,20 @@ import java.util.List;
  */
 public class Subsets78 {
 
+
     public List<List<Integer>> subsets(int[] nums) {
-        return null;
+        List<List<Integer>> result = new ArrayList<>();
+        backtrack(nums, 0, result, new ArrayList<>());
+        return result;
+    }
+
+    public void backtrack(int[] nums, int i, List<List<Integer>> result, ArrayList<Integer> tmp) {
+        result.add(new ArrayList<Integer>(tmp));
+        for (int start = i; start < nums.length; start++) {
+            tmp.add(nums[start]);
+            backtrack(nums, start + 1, result, tmp);
+            // 将本次添加的元素移除，避免回溯时当前元素出现重复
+            tmp.remove(tmp.size() - 1);
+        }
     }
 }

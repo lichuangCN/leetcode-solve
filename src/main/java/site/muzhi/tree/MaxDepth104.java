@@ -1,4 +1,4 @@
-package site.muzhi.binary;
+package site.muzhi.tree;
 
 import java.util.LinkedList;
 import java.util.Queue;
