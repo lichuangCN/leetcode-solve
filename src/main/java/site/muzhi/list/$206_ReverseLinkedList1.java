@@ -23,7 +23,32 @@ public class $206_ReverseLinkedList1 {
         }
     }
 
+    /**
+     * 递归写法
+     *
+     * @param head
+     * @return
+     */
     public static ListNode reverseList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        // 子链表反转后的头节点
+        ListNode newHead = reverseList(head.next);
+        // head.next指向的节点时是反转后的子链表的尾结点，即将当前节点添加在翻转链表的尾部
+        head.next.next = head;
+        // 重置尾部节点的指针为null
+        head.next = null;
+        return newHead;
+    }
+
+    /**
+     * 非递归写法
+     *
+     * @param head
+     * @return
+     */
+    public static ListNode reverseList2(ListNode head) {
         // 逆置链表的头指针
         ListNode newHead = null;
         while (head != null) {

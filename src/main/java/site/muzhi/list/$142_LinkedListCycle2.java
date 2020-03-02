@@ -31,7 +31,9 @@ public class $142_LinkedListCycle2 {
             fast = (fast.next.next != null) ? fast.next.next : null;
             slow = (slow.next != null) ? slow.next : null;
             // 当快慢指针相遇时，表示链表存在环
-            if (fast == slow) break;
+            if (fast == slow) {
+                break;
+            }
         }
         /*
          * 重置快指针指向头结点
