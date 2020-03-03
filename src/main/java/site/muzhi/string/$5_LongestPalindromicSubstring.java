@@ -22,6 +22,9 @@ public class $5_LongestPalindromicSubstring {
             int len = Math.max(len1, len2);
             // 当前的回文子串大于等于之前最长回文子串，重新设定子串位置
             if (len > (end - start)) {
+                // 当回文子串长度是偶数时，(len-1)可以保证start指向开头位置
+                // 如果是不使用(len-1),则会指向开头位置的前一位
+                // len为奇数时不影响
                 start = i - (len - 1) / 2;
                 end = i + len / 2;
             }
