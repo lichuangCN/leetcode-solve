@@ -1,7 +1,5 @@
 package site.muzhi.list;
 
-import java.util.List;
-
 /**
  * @author lichuang
  * @date 2020/08/18
