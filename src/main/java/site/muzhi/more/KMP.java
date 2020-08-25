@@ -3,8 +3,9 @@ package site.muzhi.more;
 /**
  * Author: lichuang
  * Date: Create in 16:36 2019/11/27
- * Description:
- * KMP算法
+ * Description: KMP算法
+ * <p>
+ * 参考博客 https://www.cnblogs.com/zhangtianq/p/5839909.html
  */
 
 public class KMP {
@@ -72,6 +73,7 @@ public class KMP {
 
     /**
      * 优化过后的next[]
+     *
      * @param pattern
      * @return
      */
