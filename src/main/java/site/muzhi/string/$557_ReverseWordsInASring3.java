@@ -21,7 +21,7 @@ public class $557_ReverseWordsInASring3 {
         StringBuilder builder = new StringBuilder();
         for (String string : strings) {
             // 不使用字符串的翻转函数
-            for (int i = string.length() - 1; i > 0; i--) {
+            for (int i = string.length() - 1; i >= 0; i--) {
                 builder.append(string.charAt(i));
             }
             builder.append(" ");
