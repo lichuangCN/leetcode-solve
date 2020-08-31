@@ -21,7 +21,7 @@ public class $287_FindDuplicate {
         int fast = 0, slow = 0;
 
         while (true) {
-            fast = nums[nums[nums[fast]]];
+            fast = nums[nums[fast]];
             slow = nums[slow];
             // 快慢指针相遇
             if (nums[fast] == nums[slow]) {
