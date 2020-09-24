@@ -14,7 +14,7 @@ public class $65_Add {
             return a;
         }
         // a^b 无进位和
-        // a&b 进位值，a&b<<1 真正的进位值,要想左进一位
+        // a&b 进位值，a&b<<1 真正的进位值,要向左进一位
         return add(a ^ b, (a & b) << 1);
     }
 }
