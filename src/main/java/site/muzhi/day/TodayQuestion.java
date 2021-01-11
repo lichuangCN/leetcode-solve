@@ -7,5 +7,4 @@ package site.muzhi.day;
  */
 public class TodayQuestion {
 
-
 }
