@@ -10,18 +10,42 @@ import java.util.Stack;
  */
 public class TodayQuestion {
 
-    public int[] nextGreaterElements(int[] nums) {
-        int len = nums.length;
-        int[] res = new int[len];
-        Arrays.fill(res, -1);
+    public int calculate(String s) {
+        int result = 0, sign = 1;
         Stack<Integer> stack = new Stack<>();
-        for (int i = 0; i < len * 2; i++) {
-            while (!stack.isEmpty() && nums[i % len] > nums[stack.peek()]) {
-                res[stack.pop()] = nums[i % len];
+        char[] charArray = s.toCharArray();
+        for (int i = 0; i < charArray.length; i++) {
+            switch (charArray[i]) {
+                case ' ':
+                    break;
+                case '(':
+                    // 左侧结果和运算符入栈
+                    stack.push(result);
+                    stack.push(sign);
+                    result = 0;
+                    sign = 1;
+                    break;
+                case ')':
+                    // 左侧结果+'()'内的结果
+                    result = stack.pop() * result + stack.pop();
+                    break;
+                case '-':
+                    sign = -1;
+                    break;
+                case '+':
+                    sign = 1;
+                    break;
+                default:
+                    // 字母
+                    int num = charArray[i] - '0';
+                    while (i < charArray.length-1 && Character.isDigit(charArray[i + 1])) {
+                        num = num * 10 + (charArray[++i] - '0');
+                    }
+                    result = result + num * sign;
+                    break;
             }
-            stack.push(i % len);
         }
-        return res;
+        return result;
     }
 
 }
