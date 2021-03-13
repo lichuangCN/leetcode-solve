@@ -1,8 +1,5 @@
 package site.muzhi.day;
 
-import java.util.Arrays;
-import java.util.Stack;
-
 /**
  * @author lichuang
  * @date 2020/09/19
@@ -10,42 +7,34 @@ import java.util.Stack;
  */
 public class TodayQuestion {
 
-    public int calculate(String s) {
-        int result = 0, sign = 1;
-        Stack<Integer> stack = new Stack<>();
-        char[] charArray = s.toCharArray();
-        for (int i = 0; i < charArray.length; i++) {
-            switch (charArray[i]) {
-                case ' ':
-                    break;
-                case '(':
-                    // 左侧结果和运算符入栈
-                    stack.push(result);
-                    stack.push(sign);
-                    result = 0;
-                    sign = 1;
-                    break;
-                case ')':
-                    // 左侧结果+'()'内的结果
-                    result = stack.pop() * result + stack.pop();
-                    break;
-                case '-':
-                    sign = -1;
-                    break;
-                case '+':
-                    sign = 1;
-                    break;
-                default:
-                    // 字母
-                    int num = charArray[i] - '0';
-                    while (i < charArray.length-1 && Character.isDigit(charArray[i + 1])) {
-                        num = num * 10 + (charArray[++i] - '0');
-                    }
-                    result = result + num * sign;
-                    break;
-            }
-        }
-        return result;
+    public double myPow(double x, int n) {
+        double val = quickPow(x, n);
+        return n > 0 ? val : 1 / val;
     }
 
+    public double quickPow(double x, int n) {
+        if (n == 0) {
+            return 1;
+        }
+        double ant = quickPow(x, n / 2);
+        return (n & 1) == 0 ? ant * ant : ant * ant * x;
+    }
+
+    public static void main(String[] args) {
+        quickPow_2(2.0, -2);
+    }
+
+    public static double quickPow_2(double x, int n) {
+
+        int idx = n;
+        double res = 1.0, ans = x;
+        while (idx != 0) {
+            if ((idx & 1) == 1) {
+                res *= ans;
+            }
+            ans *= ans;
+            idx /= 2;
+        }
+        return n > 0 ? res : 1 / res;
+    }
 }
