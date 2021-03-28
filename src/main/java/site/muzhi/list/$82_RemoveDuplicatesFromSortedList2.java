@@ -102,4 +102,54 @@ public class $82_RemoveDuplicatesFromSortedList2 {
         }
         return head;
     }
+
+    /**
+     * 迭代
+     *
+     * @param head
+     * @return
+     */
+    public ListNode deleteDuplicates_3(ListNode head) {
+        ListNode dumpy = new ListNode(0);
+        ListNode tail = dumpy;
+        while (head != null) {
+            if (head.next == null || head.val != head.next.val) {
+                tail.next = head;
+                tail = head;
+            }
+            while (head.next != null && head.val == head.next.val) {
+                head = head.next;
+            }
+            head = head.next;
+        }
+        tail.next = null;
+        return dumpy.next;
+    }
+
+    /**
+     * 探测法
+     *
+     * @param head
+     * @return
+     */
+    public ListNode deleteDuplicates_4(ListNode head) {
+        ListNode dumpy = new ListNode(0);
+        dumpy.next = head;
+        ListNode pre = dumpy, ptr = head;
+        while (ptr != null && ptr.next != null) {
+            // 向后探测
+            if (ptr.val == ptr.next.val) {
+                while (ptr != null && ptr.next != null && ptr.val == ptr.next.val) {
+                    ptr = ptr.next;
+                }
+                pre.next = ptr.next;
+                ptr = ptr.next;
+            } else {
+                pre.next = ptr;
+                pre = ptr;
+                ptr = ptr.next;
+            }
+        }
+        return dumpy.next;
+    }
 }
