@@ -35,8 +35,8 @@ public class $22_GenerateParenthesis {
         if (leftCount == n && rightCount == n) {
             results.add(str);
         }
-        // 左括号的数目要大于右括号
-        if (leftCount > rightCount) {
+        // 左括号的数目要大于等于右括号
+        if (leftCount >= rightCount) {
             String s = new String(str);
             // 在当前的字符串上拼接一个 (
             backtrack(results, str + "(", leftCount + 1, rightCount, n);
