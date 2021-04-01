@@ -1,4 +1,4 @@
-package site.muzhi.set;
+package site.muzhi.ds;
 
 /**
  * @author lichuang
