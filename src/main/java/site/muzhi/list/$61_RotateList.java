@@ -28,9 +28,9 @@ public class $61_RotateList {
             len++;
             tail = tail.next;
         }
-        // 寻找链表右移动i个位置后新链表的头节点=链表左移len-i个位置后的新链表的头节点
+        // 再移动move个节点，即tail指向新的尾结点
         int move = len - (k % len);
-        // 如果刚好移动了n个循环，即位置未发生改动
+        // 如果刚好移动了n个循环，即位置未发生改动,tail仍指向尾结点
         if (move == 0) {
             return head;
         }
