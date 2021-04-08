@@ -1,4 +1,4 @@
-package site.muzhi.array;
+package site.muzhi.binarysearch;
 
 /**
  * @author lichuang
@@ -9,18 +9,25 @@ package site.muzhi.array;
  */
 public class $81_Search {
 
+    /**
+     * 二分
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
     public boolean search(int[] nums, int target) {
         int left = 0, right = nums.length - 1;
         while (right > left && nums[0] == nums[right]) {
             right--;
         }
-        // 第一次二分,寻找旋转点
-        while (left < right) {
+        // 第一次二分,寻找分界点
+        while (left <= right) {
             int middle = left + (right - left) / 2;
             if (nums[middle] >= nums[0]) {
                 left = middle + 1;
             } else {
-                right = middle;
+                right = middle - 1;
             }
         }
         return find(nums, 0, left - 1, target) || find(nums, left, nums.length - 1, target);

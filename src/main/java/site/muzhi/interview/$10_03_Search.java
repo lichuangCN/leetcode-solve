@@ -10,9 +10,9 @@ package site.muzhi.interview;
 public class $10_03_Search {
 
     public int search(int[] arr, int target) {
-        int left = 0, right = arr.length - 1, mid = 0;
+        int left = 0, right = arr.length - 1;
         while (left <= right) {
-            mid = left + (right - left) / 2;
+            int mid = left + (right - left) / 2;
             if (arr[left] == target) {
                 return left;
             }
@@ -24,6 +24,15 @@ public class $10_03_Search {
                 left = mid + 1;
                 continue;
             }
+            // 左侧递增
+            if (arr[left] < arr[mid]) {
+                if (arr[left] < target && target < arr[mid]) {
+                    right = mid - 1;
+                } else {
+                    left = mid + 1;
+                }
+                continue;
+            }
             // 右侧递增
             if (arr[mid] < arr[right]) {
                 if (arr[mid] < target && target < arr[right]) {
@@ -33,16 +42,8 @@ public class $10_03_Search {
                 }
                 continue;
             }
-            // 左侧递增
-            if (arr[mid] > arr[right]) {
-                if (arr[left] < target && target < arr[mid]) {
-                    right = mid - 1;
-                } else {
-                    left = mid + 1;
-                }
-                continue;
-            }
-            // 什么情况都不满足
+
+            // 此时arr[left]==arr[mid]==arr[right]
             right--;
         }
 
