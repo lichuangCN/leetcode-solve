@@ -1,4 +1,4 @@
-package site.muzhi.cla.interview;
+package site.muzhi.cla.interview.chapter1;
 
 import java.util.*;
 

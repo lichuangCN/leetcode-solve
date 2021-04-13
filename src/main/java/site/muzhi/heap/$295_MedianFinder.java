@@ -22,40 +22,40 @@ import java.util.PriorityQueue;
  */
 public class $295_MedianFinder {
 
-}
 
-class MedianFinder {
-    /**
-     * initialize your data structure here.
-     */
-    PriorityQueue<Integer> maxheap;
-    PriorityQueue<Integer> minheap;
-    int count;
+    class MedianFinder {
+        /**
+         * initialize your data structure here.
+         */
+        PriorityQueue<Integer> maxheap;
+        PriorityQueue<Integer> minheap;
+        int count;
 
-    public MedianFinder() {
-        count = 0;
-        maxheap = new PriorityQueue<>((x, y) -> y - x);
-        minheap = new PriorityQueue<>();
-    }
-
-    public void addNum(int num) {
-        count++;
-        // 先入最大堆，后入最小堆
-        maxheap.offer(num);
-        minheap.offer(maxheap.poll());
-        // 调整两个堆得元素个数
-        if ((count % 2) != 0) {
-            maxheap.offer(minheap.poll());
+        public MedianFinder() {
+            count = 0;
+            maxheap = new PriorityQueue<>((x, y) -> y - x);
+            minheap = new PriorityQueue<>();
         }
-    }
 
-    public double findMedian() {
-        if ((count % 2) == 0) {
-            // 如果是偶数，则是两个堆顶之和的1/2
-            return (double) (maxheap.peek() + minheap.peek()) / 2;
-        } else {
-            // 如果是奇数，则是最
-            return (double) maxheap.peek();
+        public void addNum(int num) {
+            count++;
+            // 先入最大堆，后入最小堆
+            maxheap.offer(num);
+            minheap.offer(maxheap.poll());
+            // 调整两个堆得元素个数
+            if ((count % 2) != 0) {
+                maxheap.offer(minheap.poll());
+            }
+        }
+
+        public double findMedian() {
+            if ((count % 2) == 0) {
+                // 如果是偶数，则是两个堆顶之和的1/2
+                return (double) (maxheap.peek() + minheap.peek()) / 2;
+            } else {
+                // 如果是奇数，则是最
+                return (double) maxheap.peek();
+            }
         }
     }
 }

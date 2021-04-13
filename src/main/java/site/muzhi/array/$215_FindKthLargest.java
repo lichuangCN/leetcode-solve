@@ -16,22 +16,18 @@ package site.muzhi.array;
  */
 public class $215_FindKthLargest {
 
-    public static void main(String[] args) {
-
-    }
-
-    public static int findKthLargest(int[] nums, int k) {
+    public int findKthLargest(int[] nums, int k) {
         int[] heap = new int[k];
         // 先取前k个元素构建最小堆
         for (int i = 0; i < k; i++) {
             heap[i] = nums[i];
         }
-        buildHeep(heap);
+        buildHeap(heap);
 
         for (int j = k; j < nums.length; j++) {
             if (heap[0] < nums[j]) {
                 heap[0] = nums[j];
-                buildHeep(heap);
+                buildHeap(heap);
             }
         }
         return heap[0];
@@ -42,7 +38,7 @@ public class $215_FindKthLargest {
      *
      * @param heap
      */
-    public static void buildHeep(int[] heap) {
+    public void buildHeap(int[] heap) {
         for (int i = heap.length / 2; i >= 0; i--) {
             heap(i, heap.length, heap);
         }
@@ -51,7 +47,7 @@ public class $215_FindKthLargest {
     /**
      * 调整(最小)堆
      */
-    public static void heap(int i, int n, int[] heap) {
+    public void heap(int i, int n, int[] heap) {
         // 左节点索引
         int l = i * 2 + 1;
         // 右节点索引
