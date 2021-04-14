@@ -1,6 +1,5 @@
 package site.muzhi.cla.interview.chapter3;
 
-import java.util.Iterator;
 import java.util.PriorityQueue;
 
 /**
@@ -16,7 +15,7 @@ public class $4_kthSmallest {
      * 小顶堆
      *
      * @param matrix
-     * @param k
+     * @param k      构建小顶堆，以左侧第一列初始化堆，依次向堆中添加元素，并且在弹出k-1个元素后，堆顶元素是第k小的元素
      * @return
      */
     public int kthSmallest_2(int[][] matrix, int k) {
@@ -38,14 +37,13 @@ public class $4_kthSmallest {
     /**
      * 暴力,思路
      * 时间复杂度O(n*n)
-     * 大顶堆
+     * 大顶堆：存储前k小的元素，堆顶是前k个最小的元素中最大的一个，即第k小的元素
      *
      * @param matrix
      * @param k
      * @return
      */
     public int kthSmallest_1(int[][] matrix, int k) {
-
         PriorityQueue<Integer> heap = new PriorityQueue<>((o1, o2) -> o2 - o1);
         for (int i = 0; i < matrix.length; i++) {
             int[] row = matrix[i];
@@ -57,16 +55,5 @@ public class $4_kthSmallest {
             }
         }
         return heap.peek();
-    }
-
-    public static void main(String[] args) {
-        PriorityQueue<Integer> heap = new PriorityQueue<>();
-        int[] nums = {3, 1, 2, 5};
-        for (int num : nums) {
-            heap.offer(num);
-        }
-        while (!heap.isEmpty()) {
-            System.out.print(heap.poll());
-        }
     }
 }
