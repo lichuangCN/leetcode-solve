@@ -1,4 +1,4 @@
-package site.muzhi.sort;
+package site.muzhi.basesort;
 
 /**
  * Author: lichuang
