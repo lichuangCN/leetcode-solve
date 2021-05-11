@@ -1,7 +1,5 @@
 package site.muzhi.array;
 
-import sun.plugin.javascript.navig.Array;
-
 import java.util.Arrays;
 import java.util.HashSet;
 
@@ -60,7 +58,7 @@ public class $349_IntersectionOfTwoArrays1 {
      * @param nums2
      * @return
      */
-    public int[] intersection(int[] nums1, int[] nums2) {
+    public int[]  intersection(int[] nums1, int[] nums2) {
         HashSet<Integer> tempSet = new HashSet<Integer>();
         HashSet<Integer> resultSet = new HashSet<Integer>();
         for (int i : nums1) {
