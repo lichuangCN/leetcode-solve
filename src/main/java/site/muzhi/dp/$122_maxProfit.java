@@ -3,7 +3,7 @@ package site.muzhi.dp;
 /**
  * @author lichuang
  * @date 2021/04/24
- * @description 122. 买卖股票的最佳时机 II
+ * @description 122. 买卖股票的最佳时机 II（多次交易）
  * <p>
  * https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/
  * <p>
