@@ -28,7 +28,7 @@ public class $213_rob {
         }
         int m = dp[len - 1];
 
-        // 第一间必然选,最后一间必然不选
+        // 最后一间必然不选
         dp[0] = nums[0];
         dp[1] = nums[0];
         for (int i = 2; i < len - 1; i++) {

@@ -3,7 +3,7 @@ package site.muzhi.dp;
 /**
  * @author lichuang
  * @date 2021/04/24
- * @description 188. 买卖股票的最佳时机 IV
+ * @description 188. 买卖股票的最佳时机 IV（指定交易次数，并且同时只能持有一张股票）
  * <p>
  * https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/
  * <p>

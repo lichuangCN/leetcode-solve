@@ -3,7 +3,7 @@ package site.muzhi.dp;
 /**
  * @author lichuang
  * @date 2021/04/24
- * @description 123. 买卖股票的最佳时机 III
+ * @description 123. 买卖股票的最佳时机 III（只能进行指定交易次数，本题中指定2次）
  * <p>
  * https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/
  * <p>
