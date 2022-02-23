@@ -3,9 +3,9 @@ package site.muzhi.leetcode.offer;
 /**
  * @author lichuang
  * @date 2020/10/10
- * @description 反转链表
- *
- * 定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。
+ * @description 剑指 Offer 24. 反转链表
+ * <p>
+ * https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/
  */
 public class $24_ReverseList {
     class ListNode {
@@ -17,18 +17,36 @@ public class $24_ReverseList {
         }
     }
 
+    /**
+     * 双指针法
+     */
     public ListNode reverseList(ListNode head) {
-        if (head == null) {
-            return null;
+        ListNode t = new ListNode(0);
+        while (head != null) {
+            ListNode m = t.next;
+            ListNode n = head.next;
+            t.next = head;
+            head = n;
+            t.next.next = m;
         }
-        ListNode curr = head,next = null;
-        ListNode tempHead = new ListNode(0);
-        while (curr != null) {
-            next = curr.next;
-            curr.next = tempHead.next;
-            tempHead.next = curr;
-            curr = next;
+        return t.next;
+    }
+
+    /**
+     * 递归解法
+     * 参考思路：
+     * https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/solution/kan-bu-dong-di-gui-de-kan-guo-lai-xi-wan-1akq/
+     */
+    public ListNode reverse(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
         }
-        return tempHead.next;
+        ListNode node = reverse(head.next);
+        // head.next 实际指向已经是反转后的链表的尾结点
+        // head.next.next = head 即将当前节点添加大反转后的节点尾部
+        head.next.next = head;
+        // 避免成环
+        head.next = null;
+        return node;
     }
 }

@@ -5,7 +5,9 @@ import java.util.Stack;
 /**
  * @author lichuang
  * @date 2020/12/09
- * @description
+ * @description 剑指 Offer 30. 包含min函数的栈
+ * <p>
+ * https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof/
  */
 public class $30_MinStack {
     class MinStack {
@@ -44,9 +46,6 @@ public class $30_MinStack {
         }
 
         public int min() {
-            if (minStack.empty()) {
-                return 0;
-            }
             return minStack.peek();
         }
     }

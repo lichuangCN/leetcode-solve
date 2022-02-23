@@ -1,11 +1,14 @@
 package site.muzhi.leetcode.offer;
 
 import java.util.LinkedList;
+import java.util.Stack;
 
 /**
  * @author lichuang
  * @date 2020/11/03
- * @description 用两个栈实现队列
+ * @description 剑指 Offer 09. 用两个栈实现队列
+ * <p>
+ * https://leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/
  */
 public class $9_CQueue {
     class CQueue {
@@ -36,6 +39,38 @@ public class $9_CQueue {
                 return outStack.pollLast();
             }
             return outStack.pollLast();
+        }
+    }
+
+    /**
+     * 通过栈实现
+     */
+    class CQueue2 {
+
+        Stack<Integer> inStack;
+        Stack<Integer> outStack;
+
+        public CQueue2() {
+            inStack = new Stack<>();
+            outStack = new Stack<>();
+        }
+
+        public void appendTail(int value) {
+            inStack.push(value);
+        }
+
+        public int deleteHead() {
+            if (!outStack.isEmpty()) {
+                return outStack.pop();
+            } else {
+                while (!inStack.isEmpty()) {
+                    outStack.push(inStack.pop());
+                }
+            }
+            if (outStack.isEmpty()) {
+                return -1;
+            }
+            return outStack.pop();
         }
     }
 }
