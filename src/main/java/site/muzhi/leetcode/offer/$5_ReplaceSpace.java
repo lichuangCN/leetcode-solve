@@ -3,11 +3,13 @@ package site.muzhi.leetcode.offer;
 /**
  * @author lichuang
  * @date 2020/11/23
- * @description 替换空格
+ * @description 剑指 Offer 05. 替换空格
  * <p>
- * 请实现一个函数，把字符串 s 中的每个空格替换成"%20"。
+ * https://leetcode-cn.com/problems/ti-huan-kong-ge-lcof/
  */
 public class $5_ReplaceSpace {
+
+
     public String replaceSpace(String s) {
         if (s == null || "".equals(s)) {
             return null;
@@ -21,5 +23,15 @@ public class $5_ReplaceSpace {
             res.append(s.charAt(i));
         }
         return res.toString();
+    }
+
+    /**
+     * 奇淫技巧 哈哈哈
+     */
+    public String replaceSpace_2(String s) {
+        if (s == null || "".equals(s)) {
+            return "";
+        }
+        return s.replaceAll(" ","%20");
     }
 }
