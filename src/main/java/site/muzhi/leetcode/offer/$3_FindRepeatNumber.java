@@ -3,7 +3,9 @@ package site.muzhi.leetcode.offer;
 /**
  * @author lichuang
  * @date 2020/10/13
- * @description 数组中重复的数字
+ * @description 剑指 Offer 03. 数组中重复的数字
+ * <p>
+ * https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/
  * <p>
  * 在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。
  * 数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。
@@ -19,9 +21,6 @@ public class $3_FindRepeatNumber {
      * 时间复杂度优先
      * 时间复杂度O(n)
      * 空间复杂度O(n)
-     *
-     * @param nums
-     * @return
      */
     public int findRepeatNumber1(int[] nums) {
         int[] arr = new int[nums.length];
@@ -30,6 +29,26 @@ public class $3_FindRepeatNumber {
             arr[nums[i]]++;
             if (arr[nums[i]] > 1) {
                 return nums[i];
+            }
+        }
+        return -1;
+    }
+
+    /**
+     * 空间复杂度优先
+     * nums[i]<-->i 一一对应
+     */
+    public int findRepeatNumber(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            while (nums[i] != i) {
+                // 设nums[i] = k, nums[i] == nums[nums[i]] 转化为==> k == nums[k]
+                if (nums[i] == nums[nums[i]]) {
+                    return nums[i];
+                }
+                // 将 nums[i] = k 放到 nums[k]上
+                int t = nums[nums[i]];
+                nums[nums[i]] = nums[i];
+                nums[i] = t;
             }
         }
         return -1;
