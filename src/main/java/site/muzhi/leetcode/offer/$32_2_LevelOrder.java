@@ -8,8 +8,9 @@ import java.util.List;
  * @author lichuang
  * @date 2020/10/31
  * @description 层序打印二叉树
+ *
  */
-public class $32_LevelOrder {
+public class $32_2_LevelOrder {
     class TreeNode {
         int val;
         TreeNode left;
@@ -25,7 +26,7 @@ public class $32_LevelOrder {
         queue.addLast(root);
         while (!queue.isEmpty()) {
             int size = queue.size();
-            ArrayList<Integer> level = new ArrayList<>(size);
+            List<Integer> level = new ArrayList<>(size);
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.pollFirst();
                 level.add(node.val);
