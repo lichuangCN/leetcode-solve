@@ -3,12 +3,13 @@ package site.muzhi.leetcode.offer;
 /**
  * @author lichuang
  * @date 2020/10/12
- * @description
+ * @description 剑指 Offer 28. 对称的二叉树
+ * <p>
+ * https://leetcode-cn.com/problems/dui-cheng-de-er-cha-shu-lcof/
  */
 public class $28_IsSymmetric {
-    /**
-     * Definition for a binary tree node.
-     */
+
+
     public class TreeNode {
         int val;
         TreeNode left;

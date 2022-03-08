@@ -3,15 +3,14 @@ package site.muzhi.leetcode.offer;
 /**
  * @author lichuang
  * @date 2020/10/28
- * @description 斐波那契数列
+ * @description 剑指 Offer 10- I. 斐波那契数列
+ * <p>
+ * https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/
  */
-public class $10_Fib_1 {
+public class $10_1_Fib {
     /**
      * 1、递归方式
      * （超时）
-     *
-     * @param n
-     * @return
      */
     public int fib(int n) {
         if (n <= 1) {
@@ -22,9 +21,6 @@ public class $10_Fib_1 {
 
     /**
      * 2、自底向上迭代
-     *
-     * @param n
-     * @return
      */
     public int fib3(int n) {
         if (n <= 1) {
@@ -41,9 +37,6 @@ public class $10_Fib_1 {
 
     /**
      * 3、迭代
-     *
-     * @param n
-     * @return
      */
     public int fib4(int n) {
         if (n <= 1) {
