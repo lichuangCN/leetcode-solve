@@ -3,7 +3,9 @@ package site.muzhi.leetcode.offer;
 /**
  * @author lichuang
  * @date 2020/10/15
- * @description 链表中倒数第k个节点
+ * @description 剑指 Offer 22. 链表中倒数第k个节点
+ *
+ * https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/
  */
 public class $22_GetKthFromEnd {
     class ListNode {

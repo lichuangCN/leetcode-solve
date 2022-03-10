@@ -3,7 +3,9 @@ package site.muzhi.leetcode.offer;
 /**
  * @author lichuang
  * @date 2020/09/25
- * @description 两个链表的第一个公共节点
+ * @description 剑指 Offer 52. 两个链表的第一个公共节点
+ * <p>
+ * https://leetcode-cn.com/problems/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof/
  */
 public class $52_GgetIntersectionNode {
     /**
