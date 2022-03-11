@@ -9,7 +9,7 @@ package site.muzhi.leetcode.offer;
  * 求该树的深度。从根节点到叶节点依次经过的节点（含根、叶节点）形成树的一条路径，
  * 最长路径的长度为树的深度。
  */
-public class $55_MaxDepth_1 {
+public class $55_1_MaxDepth {
 
     /**
      * Definition for a binary tree node.

@@ -7,7 +7,7 @@ package site.muzhi.leetcode.offer;
  * <p>
  * https://leetcode-cn.com/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/
  */
-public class $58_ReverseWords_2 {
+public class $58_2_ReverseWords {
 
     public String reverseLeftWords(String s, int n) {
         if (s == null || "".equals(s) || s.length() <= n) {

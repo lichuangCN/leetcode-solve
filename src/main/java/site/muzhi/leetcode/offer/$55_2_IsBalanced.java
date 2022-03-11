@@ -5,7 +5,7 @@ package site.muzhi.leetcode.offer;
  * @date 2020/10/31
  * @description 平衡二叉树
  */
-public class $55_IsBalanced_2 {
+public class $55_2_IsBalanced {
     class TreeNode {
         int val;
         TreeNode left;
