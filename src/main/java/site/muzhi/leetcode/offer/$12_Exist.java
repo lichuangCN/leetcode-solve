@@ -3,7 +3,9 @@ package site.muzhi.leetcode.offer;
 /**
  * @author lichuang
  * @date 2020/11/23
- * @description 矩阵中的路径
+ * @description 剑指 Offer 12. 矩阵中的路径
+ * <p>
+ * https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/
  */
 public class $12_Exist {
 
