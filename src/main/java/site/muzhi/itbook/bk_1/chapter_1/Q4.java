@@ -8,7 +8,7 @@ import java.util.Queue;
  * @date 2022/10/30
  * @description
  */
-public class Q4_1 {
+public class Q4 {
     class Pet {
         private String type;
 
@@ -41,7 +41,7 @@ public class Q4_1 {
         class PetInner {
             private Pet pet;
 
-            // 时间戳
+            // 时间戳表明入队的先后顺序
             private long timestamp;
 
             public PetInner(Pet pet, long timestamp) {
@@ -83,26 +83,39 @@ public class Q4_1 {
                     return dogQueue.poll().getPet();
                 }
             }
+            if (!catQueue.isEmpty()) {
+                return catQueue.poll().getPet();
+            }
+            if (!dogQueue.isEmpty()) {
+                return dogQueue.poll().getPet();
+            }
+            return null;
         }
 
         private Pet pollDog() {
-
+            if (!dogQueue.isEmpty()) {
+                return dogQueue.poll().getPet();
+            }
+            return null;
         }
 
         private Pet pollCat() {
-
+            if (!catQueue.isEmpty()) {
+                return catQueue.poll().getPet();
+            }
+            return null;
         }
 
         private boolean isEmpty() {
-
+            return catQueue.isEmpty() && dogQueue.isEmpty();
         }
 
         private boolean isDogEmpty() {
-
+            return dogQueue.isEmpty();
         }
 
         private boolean isCatEmpty() {
-
+            return catQueue.isEmpty();
         }
 
     }

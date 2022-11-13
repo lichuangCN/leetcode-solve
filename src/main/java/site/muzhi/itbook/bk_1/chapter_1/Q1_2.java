@@ -6,8 +6,13 @@ import java.util.Stack;
  * @author lichuang
  * @date 2022/10/30
  * @description leetcode: https://leetcode.cn/problems/min-stack/
+ * 思路：
+ * 1.每次push时，先比较元素是否小于 minStack 栈顶元素；小于时才入栈
+ * 2.每次pop时，比对dataStack要出栈元素是否等于 minStack 栈顶元素；相等时，minStack才出栈
+ *
+ * 3.节省空间，出栈费时间
  */
-public class Q1_1 {
+public class Q1_2 {
 
     class MinStack {
 
@@ -20,17 +25,20 @@ public class Q1_1 {
         }
 
         public void push(int val) {
+            // here
             if (minStack.isEmpty()) {
                 minStack.push(val);
-            } else {
-                int min = minStack.peek() > val ? val : minStack.peek();
-                minStack.push(min);
+            } else if (val <= minStack.peek()) {
+                minStack.push(val);
             }
             dataStack.push(val);
         }
 
         public void pop() {
-            minStack.pop();
+            // here
+            if (dataStack.peek().equals(minStack.peek())) {
+                minStack.pop();
+            }
             dataStack.pop();
         }
 

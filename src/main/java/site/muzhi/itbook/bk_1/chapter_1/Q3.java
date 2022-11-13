@@ -17,7 +17,7 @@ import java.util.Stack;
  * 3    2
  * 4    1
  */
-public class Q3_1 {
+public class Q3 {
 
     public static void main(String[] args) {
         Stack<Integer> stack = new Stack<>();
@@ -27,7 +27,7 @@ public class Q3_1 {
         stack.push(4);
         System.out.println(stack);
 
-        Q3_1 test = new Q3_1();
+        Q3 test = new Q3();
         test.reserve(stack);
         System.out.println(stack);
     }

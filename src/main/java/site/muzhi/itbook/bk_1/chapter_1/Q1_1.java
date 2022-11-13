@@ -6,8 +6,13 @@ import java.util.Stack;
  * @author lichuang
  * @date 2022/10/30
  * @description leetcode: https://leetcode.cn/problems/min-stack/
+ * 思路：
+ * 1.每次push时，都对minStack入栈操作
+ * 2.每次pop时，同步对minStack出栈操作
+ *
+ * 3.耗空间，出栈省时间
  */
-public class Q1 {
+public class Q1_1 {
 
     class MinStack {
 

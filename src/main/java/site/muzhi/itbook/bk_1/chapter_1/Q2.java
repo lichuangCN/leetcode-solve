@@ -11,7 +11,7 @@ import java.util.Stack;
  * 1.出队列时 popStack 如果有元素则必须使用popStack栈中元素出栈
  * 2.出队列时 popStack 如果有没有素，则需要将pushStack栈中元素全部移动到popStack中后，再出栈
  */
-public class Q2_1 {
+public class Q2 {
 
     class MyQueue {
 
