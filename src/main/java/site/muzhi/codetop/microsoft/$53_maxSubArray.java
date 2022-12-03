@@ -21,4 +21,21 @@ public class $53_maxSubArray {
         }
         return max;
     }
+
+    /**
+     * 不需要dp数组
+     */
+    public int maxSubArray_2(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        int ans = nums[0], max = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            int val = nums[i];
+            max = Math.max(val, max + nums[i]);
+            ans = Math.max(max, ans);
+        }
+        return ans;
+    }
+
 }
