@@ -31,7 +31,9 @@ public class $47_permuteUnique {
 
         for (int i = 0; i < nums.length; i++) {
             // 避免重复排列，出现重复值
-            // used[i-1]表明已经使用第i-1个元素作为开头元素匹配完毕结果，nums[i] == nums[i-1]，则不再处理nums[i]git
+            // nums[i] == nums[i-1]
+            // 执行到 i 时，used[i-1] == false表明已经使用第i-1个元素完成了匹配，并且被重置为false
+            // 故不再使用nums[i]重复进行匹配
             if (i > 0 && nums[i - 1] == nums[i] && !used[i - 1]) {
                 continue;
             }

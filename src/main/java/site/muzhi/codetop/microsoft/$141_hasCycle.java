@@ -20,18 +20,18 @@ public class $141_hasCycle {
         if (head == null || head.next == null) {
             return false;
         }
-        ListNode slow = head, fast = head.next.next;
+        ListNode slow = head, fast = head;
         while (true) {
             // 终止条件：无环
             if (fast == null || fast.next == null) {
                 return false;
             }
+            slow = slow.next;
+            fast = fast.next.next;
             // 终止条件：有环
             if (fast == slow) {
                 break;
             }
-            slow = slow.next;
-            fast = fast.next.next;
         }
         return true;
     }
