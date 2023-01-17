@@ -12,15 +12,6 @@ import java.util.List;
  */
 public class $78_subsets {
 
-    public static void main(String[] args) {
-        int[] nums = {1, 2, 3};
-        $78_subsets demo = new $78_subsets();
-        List<List<Integer>> list = demo.subsets(nums);
-        for (List<Integer> row : list) {
-            System.out.println(row);
-        }
-    }
-
     public List<List<Integer>> subsets(int[] nums) {
         if (nums == null || nums.length == 0) {
             return new ArrayList<>(0);
