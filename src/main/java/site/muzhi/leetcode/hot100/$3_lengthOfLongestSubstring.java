@@ -1,37 +1,35 @@
 package site.muzhi.leetcode.hot100;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author lichuang
- * @date 2021/04/01
- * @description 3. 无重复字符的最长子串
- * <p>
- * https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
+ * @date 2023/01/18
+ * 3. 无重复字符的最长子串
  */
 public class $3_lengthOfLongestSubstring {
 
     public int lengthOfLongestSubstring(String s) {
-        Map<Character, Integer> map = new HashMap<>();
-        char[] array = s.toCharArray();
-        int left = 0, right = 0, len = 0;
-        while (right < array.length) {
-            while (right < array.length && !map.containsKey(array[right])) {
-                map.put(array[right], right);
-                right++;
-            }
-            len = Math.max(len, right - left);
-            if (right == array.length) {
-                return len;
-            }
-
-            int newLeft = map.get(array[right]) + 1;
-            for (int i = left; i < newLeft; i++) {
-                map.remove(array[i]);
-            }
-            left = newLeft;
+        if (s == null || "".equals(s)) {
+            return 0;
         }
-        return len;
+        Set<Character> dict = new HashSet<>();
+        int ans = 0, left = 0, right = 0;
+        while (right < s.length()) {
+            char curr = s.charAt(right);
+            // 当前窗口 出现重复字符
+            if (dict.contains(curr)) {
+                ans = Math.max(ans, right - left);
+                // 左指针右移 并且移除左侧元素
+                while (dict.contains(curr)) {
+                    dict.remove(s.charAt(left++));
+                }
+            }
+            dict.add(curr);
+            right++;
+        }
+        ans = Math.max(ans, right - left);
+        return ans;
     }
 }

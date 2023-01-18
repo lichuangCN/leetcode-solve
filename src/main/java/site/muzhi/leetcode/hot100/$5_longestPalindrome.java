@@ -2,35 +2,55 @@ package site.muzhi.leetcode.hot100;
 
 /**
  * @author lichuang
- * @date 2021/04/06
- * @description 5. 最长回文子串
- * <p>
- * https://leetcode-cn.com/problems/longest-palindromic-substring/
+ * @date 2023/01/18
+ * 5.最长回文子串
  */
 public class $5_longestPalindrome {
 
     public String longestPalindrome(String s) {
-        int start = 0, end = 0;
-        char[] arr = s.toCharArray();
-        for (int i = 0; i < arr.length; i++) {
-            int len1 = len(arr, i, i);
-            int len2 = len(arr, i, i + 1);
-            int len = Math.max(len1, len2);
-            if (len > (end - start)) {
-                start = i - (len - 1) / 2;
+        char[] array = s.toCharArray();
+        int begin = 0, end = 0;
+        for (int i = 0; i < array.length; i++) {
+            int odd = travel(array, i, i);
+            int even = travel(array, i, i + 1);
+            int len = Math.max(odd, even);
+            /*
+             * len = 偶数
+             *   i
+             * a a b b
+             * 0 1 2 3
+             * b     e
+             * len = 4; i = 1
+             * begin = i - len / 2 + 1  ==> 0
+             * end = i + len / 2        ==> 3
+             *
+             * len = 奇数
+             *     i
+             * a a b c c
+             * 0 1 2 3 4
+             * b       e
+             * len = 5; i = 2;
+             * begin = i - len / 2      ==> 0
+             * end = i + len / 2        ==> 4
+             *
+             * 在面对奇数和偶数 计算begin时存在误差
+             * 可以转换为
+             * begin = i - (len - 1) / 2
+             * 即无论len为 奇数 或 偶数，保证计算结果一致
+             */
+            if (len > (begin - end)) {
+                begin = i - (len - 1) / 2;
                 end = i + len / 2;
             }
         }
-
-        return s.substring(start, end + 1);
+        return s.substring(begin, end + 1);
     }
 
-    public int len(char[] arr, int left, int right) {
-        int L = left, R = right;
-        while (L >= 0 && R < arr.length && arr[L] == arr[R]) {
-            L--;
-            R++;
+    public int travel(char[] array, int left, int right) {
+        while (left > 0 && right < array.length && array[left] == array[right]) {
+            left--;
+            right++;
         }
-        return R - L - 1;
+        return right - left - 1;
     }
 }
