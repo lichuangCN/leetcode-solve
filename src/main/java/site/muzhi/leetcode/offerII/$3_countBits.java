@@ -7,7 +7,7 @@ package site.muzhi.leetcode.offerII;
  * <p>
  * https://leetcode-cn.com/problems/w3tCBm/
  */
-public class $003_countBits {
+public class $3_countBits {
 
     /**
      * i:偶数 ans[i] = ans[i/2]
