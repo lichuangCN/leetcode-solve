@@ -26,7 +26,7 @@ public class $33_groupAnagrams {
             StringBuilder builder = new StringBuilder();
             for (int i = 0; i < charCount.length; i++) {
                 if (charCount[i] != 0) {
-                    builder.append((char) (i + 'a')).append(i);
+                    builder.append((char) (i + 'a')).append(charCount[i]);
                 }
             }
             List<String> list = countMap.getOrDefault(builder.toString(), new ArrayList<>());

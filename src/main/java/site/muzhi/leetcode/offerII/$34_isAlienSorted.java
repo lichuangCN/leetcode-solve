@@ -25,9 +25,11 @@ public class $34_isAlienSorted {
             String w2 = words[i + 1];
 
             // 比较两个词的顺序
-            for (int j = 0; j < Math.max(w1.length(), w2.length()); j++) {
-                int w1_order = j > w1.length() - 1 ? -1 : orderSort.get(w1.charAt(j));
-                int w2_order = j > w2.length() - 1 ? -1 : orderSort.get(w2.charAt(i));
+            int w1_len = w1.length();
+            int w2_len = w2.length();
+            for (int j = 0; j < Math.max(w1_len, w2_len); j++) {
+                int w1_order = j > w1_len - 1 ? -1 : orderSort.get(w1.charAt(j));
+                int w2_order = j > w2_len - 1 ? -1 : orderSort.get(w2.charAt(j));
                 // w1_order根据字典应该在w2_order后面
                 if (w1_order > w2_order) return false;
                 // 满足要求 不再需要继续比较

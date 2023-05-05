@@ -20,7 +20,7 @@ public class $38_dailyTemperatures {
             // 栈记录最高温度
             while (!stack.isEmpty() && temperatures[stack.peekLast()] < temperatures[i]) {
                 Integer idx = stack.pollLast();
-                ans[i] = i - idx;
+                ans[idx] = i - idx;
             }
             stack.addLast(i);
         }
