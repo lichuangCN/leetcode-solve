@@ -11,12 +11,22 @@ import java.util.PriorityQueue;
  */
 public class $60_topKFrequent {
 
+    public static void main(String[] args) {
+        $60_topKFrequent k = new $60_topKFrequent();
+        int[] ints = k.topKFrequent(new int[]{5, 3, 1, 1, 1, 3, 73, 1}, 2);
+        for (int anInt : ints) {
+            System.out.println(anInt);
+        }
+    }
+
     public int[] topKFrequent(int[] nums, int k) {
         PriorityQueue<int[]> queue = new PriorityQueue<>((x, y) -> x[1] - y[1]);
         Map<Integer, Integer> numCount = new HashMap<>();
         for (int num : nums) {
-            int[] curr = numCount.containsKey(num) ? new int[]{num, numCount.get(num) + 1} : new int[]{num, 1};
-            numCount.put(num, curr[1]);
+            numCount.put(num, numCount.getOrDefault(num, 0) + 1);
+        }
+        for (Map.Entry<Integer, Integer> entry : numCount.entrySet()) {
+            int[] curr = new int[]{entry.getKey(), entry.getValue()};
             queue.offer(curr);
             if (queue.size() > k) {
                 queue.poll();

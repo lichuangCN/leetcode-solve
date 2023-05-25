@@ -1,9 +1,6 @@
 package site.muzhi.leetcode.offerII;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author lichuang
@@ -14,12 +11,11 @@ public class $44_largestValues {
 
     public List<Integer> largestValues(TreeNode root) {
         if (root == null) {
-            return null;
+            return new ArrayList<>();
         }
         Deque<TreeNode> levelQueue = new ArrayDeque<>();
         List<Integer> ans = new ArrayList<>();
         levelQueue.addLast(root);
-        ans.add(root.val);
 
         // 最大堆
         while (!levelQueue.isEmpty()) {
@@ -27,13 +23,12 @@ public class $44_largestValues {
             int max = Integer.MIN_VALUE;
             for (int i = 0; i < size; i++) {
                 TreeNode node = levelQueue.pollFirst();
+                max = Math.max(node.val, max);
                 if (node.left != null) {
                     levelQueue.addLast(node.left);
-                    max = Math.max(max, node.left.val);
                 }
                 if (node.right != null) {
                     levelQueue.addLast(node.right);
-                    max = Math.max(max, node.right.val);
                 }
             }
             ans.add(max);

@@ -1,9 +1,5 @@
 package site.muzhi.leetcode.offerII;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.Stack;
-
 /**
  * @author lichuang
  * @date 2023/05/09
@@ -26,7 +22,7 @@ public class $49_sumNumbers {
         if (node.left == null && node.right == null) {
             return curr;
         }
-        return travel(num, node.left) + travel(num, node.right);
+        return travel(curr, node.left) + travel(curr, node.right);
     }
 
     class TreeNode {
