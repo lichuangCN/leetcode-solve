@@ -3,7 +3,7 @@ package site.muzhi.leetcode.offerII;
 /**
  * @author lichuang
  * @date 2023/06/15
- * 77.链表排序（归并排序）
+ * 77.链表排序（归并排序: 分割链表;有序链表合并）
  */
 public class $77_sortList {
     public ListNode sortList(ListNode head) {
