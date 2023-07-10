@@ -7,11 +7,6 @@ package site.muzhi.leetcode.offerII;
  */
 public class $103_coinChange {
 
-    public static void main(String[] args) {
-        $103_coinChange demo = new $103_coinChange();
-        System.out.println(demo.coinChange(new int[]{2}, 3));
-    }
-
     public int coinChange(int[] coins, int amount) {
 
         int[] dp = new int[amount + 1];

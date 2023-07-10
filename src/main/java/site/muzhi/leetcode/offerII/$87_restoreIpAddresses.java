@@ -12,14 +12,6 @@ import java.util.List;
  */
 public class $87_restoreIpAddresses {
 
-    public static void main(String[] args) {
-        $87_restoreIpAddresses demo = new $87_restoreIpAddresses();
-        List<String> ans = demo.restoreIpAddresses("25525511135");
-        ans.forEach( e-> {
-            System.out.println(e);
-        });
-    }
-
     public List<String> restoreIpAddresses(String s) {
         List<String> ans = new ArrayList<>();
 
