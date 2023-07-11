@@ -32,7 +32,7 @@ public class SkipList<T> {
     /**
      * 当前跳表索引层数
      */
-    private int hightLevel;
+    private int heightLevel;
     /**
      * 跳表索引最高层数
      */
@@ -44,7 +44,7 @@ public class SkipList<T> {
 
     public SkipList() {
         head = new SkipNode<T>(Integer.MIN_VALUE, null);
-        hightLevel = 0;
+        heightLevel = 0;
         random = new Random();
     }
 
@@ -127,7 +127,7 @@ public class SkipList<T> {
         // 重新计算层高
         while (head.right == null) {
             head = head.down;
-            hightLevel--;
+            heightLevel--;
         }
     }
 
@@ -192,8 +192,8 @@ public class SkipList<T> {
             }
             level++;
             // 新增的层数超过原来的层数,需要改变head节点
-            if (level > hightLevel) {
-                hightLevel = level;
+            if (level > heightLevel) {
+                heightLevel = level;
                 SkipNode<T> highHeadNode = new SkipNode<>(Integer.MIN_VALUE, null);
                 highHeadNode.down = head;
                 head = highHeadNode;
@@ -205,7 +205,7 @@ public class SkipList<T> {
 
     public void print() {
         SkipNode teamHead = head;
-        int level = hightLevel;
+        int level = heightLevel;
         SkipNode lastNode = teamHead;
         while (lastNode.down != null) {
             lastNode = lastNode.down;
