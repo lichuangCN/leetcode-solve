@@ -3,6 +3,7 @@ package site.muzhi.codetop.frequency;
 /**
  * @author lichuang
  * @date 2023/07/10
+ * 25.K个一组翻转链表
  */
 public class $25_reverseKGroup {
 
