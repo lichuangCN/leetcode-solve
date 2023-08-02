@@ -23,7 +23,8 @@ public class $48_rotate {
 
         // 对称旋转
         for (int r = 0; r < n; r++) {
-            for (int c = 0; c < n - r; c++) {
+            // c = n-r-1 对角线位置
+            for (int c = 0; c < n - r - 1; c++) {
                 swap(matrix, r, c, n - c - 1, n - r - 1);
             }
         }
