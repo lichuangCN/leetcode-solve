@@ -3,7 +3,7 @@ package site.muzhi.codetop.frequency;
 /**
  * @author lichuang
  * @date 2023/07/12
- * 121.买卖股票的最佳时机
+ * 121.买卖股票的最佳时机 仅交易一次
  */
 public class $121_maxProfit {
     // 输入：[7,1,5,3,6,4]
