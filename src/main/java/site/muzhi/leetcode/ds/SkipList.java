@@ -1,15 +1,12 @@
 package site.muzhi.leetcode.ds;
 
-import java.util.LinkedList;
-import java.util.Random;
+import java.util.*;
 
 /**
  * @author lichuang
  * @date 2020/12/27
- * @description 跳跃链表, 不重复的key值
- * <p>
- * 致谢：
- * 参考博客:https://leetcode-cn.com/circle/article/gRlksy/
+ * 跳跃链表, 不重复的key值
+ * Ref:https://leetcode-cn.com/circle/article/gRlksy/
  */
 public class SkipList<T> {
 
@@ -51,9 +48,6 @@ public class SkipList<T> {
 
     /**
      * 寻找节点
-     *
-     * @param key
-     * @return
      */
     public SkipNode<T> get(int key) {
         SkipNode team = head;
@@ -76,10 +70,6 @@ public class SkipList<T> {
 
     /**
      * 更新节点的值
-     *
-     * @param key
-     * @param newVal
-     * @return
      */
     public void update(int key, T newVal) {
         SkipNode team = head;
@@ -102,9 +92,6 @@ public class SkipList<T> {
 
     /**
      * 删除节点
-     *
-     * @param key
-     * @return
      */
     public void delete(int key) {
         // team指向要移除节点的前驱节点
@@ -133,8 +120,6 @@ public class SkipList<T> {
 
     /**
      * 新增节点
-     *
-     * @param newNode
      */
     public void add(SkipNode<T> newNode) {
         int key = newNode.key;
@@ -145,7 +130,7 @@ public class SkipList<T> {
             return;
         }
         // 存储向下的节点，这些节点的右侧可能会插入节点
-        LinkedList<SkipNode> stack = new LinkedList<>();
+        Deque<SkipNode> stack = new ArrayDeque<>();
         SkipNode team = head;
         // 寻找要插入的节点的位置，并且记录索引层中可能右侧需要添加新节点的路径
         while (team != null) {
