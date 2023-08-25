@@ -1,4 +1,4 @@
-package site.muzhi.thread;
+package site.muzhi.leetcode.others;
 
 import java.util.LinkedList;
 import java.util.Queue;
