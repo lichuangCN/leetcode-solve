@@ -1,6 +1,7 @@
 package site.muzhi.codetop.frequency;
 
-import org.apache.commons.math3.util.Pair;
+
+import javafx.util.Pair;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
