@@ -1,4 +1,4 @@
-package site.muzhi.leetcode.tree;
+package site.muzhi.leetcode.main;
 
 /**
  * @author: LiChuang

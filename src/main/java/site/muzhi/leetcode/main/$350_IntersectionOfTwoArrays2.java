@@ -1,4 +1,4 @@
-package site.muzhi.leetcode.array;
+package site.muzhi.leetcode.main;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package site.muzhi.leetcode.tree;
+package site.muzhi.leetcode.main;
 
 import java.util.*;
 
