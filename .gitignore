@@ -5,6 +5,8 @@
 *.ipr
 target/
 
+doc/
+
 ### mac os ###
 .DS_Store
 
