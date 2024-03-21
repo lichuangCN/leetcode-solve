@@ -25,42 +25,44 @@ public class $103_zigzagLevelOrder {
 
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         if (root == null) {
-            return new ArrayList<>(0);
+            return new ArrayList<>();
         }
-        List<List<Integer>> ans = new ArrayList<>();
-        Deque<TreeNode> deque = new ArrayDeque<>();
-        deque.addLast(root);
-        int level = 0;
-        while (!deque.isEmpty()) {
-            List<Integer> levelVal = new ArrayList<>(deque.size());
-            int levelSize = deque.size();
-            if ((level & 1) == 0) {
-                // 偶数层: 从左向右 从队首取节点
-                for (int i = 0; i < levelSize; i++) {
-                    TreeNode node = deque.pollFirst();
+        List<List<Integer>> ans = new ArrayList();
+        Deque<TreeNode> queue = new ArrayDeque<>();
+        queue.add(root);
+        int level = 0; // 根节点层码
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            List<Integer> levelVal = new ArrayList<>(size);
+            ans.add(levelVal);
+
+            // 保证队列中的元素能够按照树中每一层都从左到右的顺序插入
+            for (int i = 0; i < size; i++) {
+                if ((level & 1) == 0) {
+                    // 偶数层, 从左到右遍历
+                    TreeNode node = queue.pollFirst();
                     levelVal.add(node.val);
+                    // 下一层节点，从队尾插入
                     if (node.left != null) {
-                        deque.addLast(node.left);
+                        queue.addLast(node.left);
                     }
                     if (node.right != null) {
-                        deque.addLast(node.right);
+                        queue.addLast(node.right);
                     }
-                }
-            } else {
-                // 奇数层：从右向左 从队尾取节点
-                for (int i = 0; i < levelSize; i++) {
-                    TreeNode node = deque.pollLast();
+                } else {
+                    // 奇数层, 从右到左遍历
+                    TreeNode node = queue.pollLast();
                     levelVal.add(node.val);
+                    // 下一层节点，从队首插入
                     if (node.right != null) {
-                        deque.addFirst(node.right);
+                        queue.addFirst(node.right);
                     }
                     if (node.left != null) {
-                        deque.addFirst(node.left);
+                        queue.addFirst(node.left);
                     }
                 }
             }
             level++;
-            ans.add(levelVal);
         }
         return ans;
     }

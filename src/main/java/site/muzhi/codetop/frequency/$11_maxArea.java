@@ -11,7 +11,7 @@ public class $11_maxArea {
         int ans = 0;
         int left = 0, right = height.length - 1;
         while (left < right) {
-            int v = Math.min(height[left], height[right]) * (right - left + 1);
+            int v = Math.min(height[left], height[right]) * (right - left);
             ans = Math.max(ans, v);
             if (height[left] < height[right]) {
                 left++;
